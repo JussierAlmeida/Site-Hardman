@@ -21,6 +21,12 @@ img{
 input[type="submit"]{
     cursor: pointer;
 }
+i {
+    background-color: var(--main-color);
+    color: var(--primary-text-color);
+    font-size: 2.5rem;
+    padding: 2rem;
+}
 /*cabeçalho header*/
 #header{
     min-height: 90vh;
@@ -165,3 +171,99 @@ input[type="submit"]{
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
+/*Sobre nós*/
+#about{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+#about-text{
+    background-image: url(img/pattern.png);
+    background-size: cover;
+    background-position: center;
+    color: var(--primary-text-color);
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 3rem;
+}
+#about-text .section-subtitle,
+#about-text .section-title{
+    color: var(--primary-text-color);
+}
+#about-text i{
+    background-color: transparent;
+}
+.about-description{
+    display: flex;
+    align-items: center;
+}
+.about-description h4{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+#about-data{
+    flex: 1 1 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+#about-data .data{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: -1px;
+    margin-right: -1px;
+}
+#about-data .data:first-child{
+    border-bottom:1px solid var(--secondary-color);
+    border-right:1px solid var(--secondary-color);
+}
+#about-data .data:last-child{
+    border-top:1px solid var(--secondary-color);
+    border-left:1px solid var(--secondary-color);
+}
+#about-data .data i{
+    background-color: transparent;
+    color: var(--main-color);
+    font-size: 4rem;
+    padding: 0;
+}
+#about-data .data .number{
+    font-size: 4rem;
+    font-weight: 900;
+}
+.data .text{
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
