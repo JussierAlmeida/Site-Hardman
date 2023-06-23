@@ -476,7 +476,7 @@ i {
     }
     #menu,
     #close-menu{
-        display: block;
+        display:block;
     }
     .banner{
         max-width: 100%;
@@ -569,13 +569,6 @@ i {
     .links-container{
         width: 100%;
     }
-    
-    
-
-
-
-
-
 
 }
 
