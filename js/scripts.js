@@ -32,20 +32,21 @@ function smoothScroll(e){
 }
 //banner aereo
 function showSlides(){
-    console.log(slides);
-
     for (let i =0; i<slides.length; i++){
         slides[i].classList.remove("active");
         dots[i].classList.remove("active");
     }
-    slideIndex++
+    slideIndex++;
+
     if(slideIndex > slides.length){
         slideIndex = 1;
     }
+
     slides[slideIndex- 1].classList.add("active");
     dots[slideIndex- 1].classList.add("active");
+
     setTimeout(showSlides, 3000);
-  
+}
 function smoothScroll(e){ 
    e.preventDefault();
    const href = this.getAttribute("href");
