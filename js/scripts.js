@@ -16,27 +16,14 @@ const dots = document.querySelectorAll(".dot");
 let slideIndex = 0;
 
 //funçoes
-function smoothScroll(e){ 
-   e.preventDefault();
-   const href = this.getAttribute("href");
-   const offsetTop = document.querySelector(href).offsetTop;
-    scroll({
-        top: offsetTop,
-        behavior: "smooth",
-    });
-    setTimeout(()=>{
-        if(menu.classList.contains(menu-active)){
-        menu.classList.remove("menu-active");
-        }
-    },500);
-}
 //banner aereo
 function showSlides(){
+    console.log(slides);
     for (let i =0; i<slides.length; i++){
         slides[i].classList.remove("active");
         dots[i].classList.remove("active");
     }
-    slideIndex++;
+    slideIndex++
 
     if(slideIndex > slides.length){
         slideIndex = 1;
@@ -61,8 +48,6 @@ function smoothScroll(e){
         }
     },500);
 }
-
-
 //eventos
 //cria js
 [menu_btn,close_menu_btn].forEach((btn) =>{
