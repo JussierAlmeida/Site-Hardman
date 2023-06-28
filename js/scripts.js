@@ -1,40 +1,69 @@
-const nome = "jussier";
-console.log(typeof nome);
+//seleção de elementos 
+//cria js----------------------------------ok
+const menu_btn = document.querySelector("#menu");
+const close_menu_btn = document.querySelector("#close-menu");
+const menu = document.querySelector("#mobile-navbar");
 
-const x =10;//number
-console.log(typeof x);
+//cria menu aereo--------------------------ok
+const desktoplinks = document.querySelectorAll("#navbar a");
+const mobilelinks = document.querySelectorAll("#mobile-navbar a");
+const alllinks = [...desktoplinks,...mobilelinks];
 
-const liste =[1,2,3]//object - array
-console.log(typeof liste);
+//banner aereo---------------------------------ok
+const slides = document.querySelectorAll(".banner");
+const dots = document.querySelectorAll(".dot");
+let slideIndex = 0;
 
-const object = {nome_: "rafael",age: 23 }//object
-console.log(typeof object);
+//funçoes
 
-const u = true;
-console.log(typeof u);
+//---------------------------------ok
+function smoothScroll(e){ 
+   e.preventDefault();
 
-const arr =["a","b","c","d"];
-for(let i =0; i < arr.length; i++){
-    console.log("o valor da repetição é:" + arr[i]);
+   const href = this.getAttribute("href");
+   const offsetTop = document.querySelector(href).offsetTop;
+
+    scroll({
+        top: offsetTop,
+        behavior: "smooth",
+    });
+
+    setTimeout(()=>{
+        if(menu.classList.contains("menu-active")){
+        menu.classList.remove("menu-active");
+        }
+    },500);
+}
+//banner aereo--------------------------------ok
+function showSlides(){
+
+    for (let i =0; i<slides.length; i++){
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+    slideIndex++;
+
+    if(slideIndex > slides.length){
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+
+    setTimeout(showSlides, 3000);
 }
 
-function soma(a,b){
-    console.log(a+b);
-}
-soma(5,6);
-
-soma(3,6);
-
-soma(5,9);
-//dom
-//seleciona
-const brand = document.querySelector("#brand");
-console.log(brand);
-//evento
-//execução
-brand.addEventListener("click", function(event){
-    console.log(event.target);
-    event.target.style.color = "blue";
+//eventos
+//cria js----------------------------ok
+[menu_btn,close_menu_btn].forEach((btn) =>{
+    btn.addEventListener("click",(e)=>{
+        menu.classList.toggle("menu-active");
+    });
 });
 
-
+//cria menu aereo ------------------ok
+alllinks.forEach((link)=>{
+    link.addEventListener("click",smoothScroll);
+});
+//inicialização---------------------ok
+showSlides();
